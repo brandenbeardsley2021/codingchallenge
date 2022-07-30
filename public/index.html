@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coding Challenge</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/html/styles.css">
+    <style>
+        iframe {
+            max-height: 42px;
+            max-width: 480px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-card-4">
+        <div class="w3-container w3-green">
+            <h1>Payment Form</h1>
+        </div>
+        <form action="http://localhost:3000/checkout" method="post" class="w3-container" id="payment-form"
+            novalidate="">
+            <div class="w3-row">
+                <div class="w3-col m3">
+                    <label for="card-name">Cardholder Name</label>
+                    <div class="w3-input" id="card-name" placeholder="John Doe"></div>
+                </div>
+                <div class="w3-col m3">
+                    <label for="email">Email</label>
+                    <input type="email" class="w3-input" id="email" placeholder="email@example.com"></input>
+                </div>
+            </div>
+
+            <div class="w3-row">
+                <div class="w3-col m3">
+                    <label for="card-number">Credit card number</label>
+                    <div class="w3-input" id="card-number" placeholder="4111 1111 1111 1111"></div>
+                </div>
+                <div class="w3-col m3">
+                    <label for="card-expiration">Expiration</label>
+                    <div class="w3-input" id="card-expiration"></div>
+                </div>
+                <div class="w3-col m3">
+                    <label for="card-cvv">CVV</label>
+                    <div class="w3-input" id="card-cvv"></div>
+                </div>
+            </div>
+
+            <div id="checkout-message"></div>
+
+            <input class="w3-btn submit" id="payment-button" type="submit" value="Pay" />
+        </form>
+    </div>
+    <script src="https://js.braintreegateway.com/web/3.85.3/js/client.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.85.3/js/hosted-fields.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
