@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coding Challenge | Transaction History</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        iframe {
+            max-height: 42px;
+            max-width: 480px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-card-4">
+        <div class="w3-container w3-green">
+            <h1>Transaction History</h1>
+            <a href="index.html">Back to Checkout</a>
+        </div>
+        <div class="w3-container">
+            <div class="w3-row">
+                <div class="w3-col w3-text-grey">
+                    History of transactions over last 3 months
+                </div>
+            </div>
+            <div class="w3-row">
+                <table id="transactions" class="w3-table">
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                    <!-- <tr>
+                        <td>abcd</td>
+                        <td>$10.0</td>
+                        <td>Settled</td>
+                        <td>Aug 1, 2022</td>
+                    </tr> -->
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js" crossorigin="anonymous"></script>
+    <script src="js/transactions.js"></script>
+</body>
+
+</html>
