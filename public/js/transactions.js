@@ -15,4 +15,6 @@ getTransactions().then((res) => {
         ],
         paging: false
     });
+}).catch(err => {
+    console.error(err);
 });

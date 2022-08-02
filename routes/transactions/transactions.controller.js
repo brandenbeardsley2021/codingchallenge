@@ -1,6 +1,6 @@
 const gateway = require("../../lib/braintree");
 
-async function httpGetTransactions(req, res) {
+function httpGetTransactions(req, res) {
     const to = new Date();
     const from = new Date();
     from.setMonth(from.getMonth() - 3);

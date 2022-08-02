@@ -10,6 +10,14 @@ async function httpHandleCheckout(req, res) {
     const nonceFromTheClient = req.body.nonce;
     const email = req.body.email;
 
+    // validating request
+
+    if (!nonceFromTheClient || !email) {
+        return res.status(400).send({
+            err: 'Did not receive nonce or email'
+        });
+    }
+
     // Create a customer with received email
 
     const customerCreationResult = await gateway.customer.create({
@@ -56,10 +64,16 @@ async function httpHandleCheckout(req, res) {
                 storeInVaultOnSuccess: true
             }
         });
-        if (transactionResult) {
+        if (transactionResult.success) {
             return res.send(transactionResult);
             // console.log(transactionResult);
+        } else {
+            return res.status(500).send({
+                err: "Transaction Failed",
+                transactionResult
+            });
         }
+
     } catch (error) {
         return res.status(500).send(error);
     }
